@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>javascript first project</title>
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body> 
+   
+ <section id="namota">
+      <div class="container">
+      <input type="text" id="namta">
+   <br>
+   <button type="button" class="btn btn-success" onclick="getnamta()">get the namta</button>
+    
+    <h3 id="resultshow"></h3>
+  </div>
+ </section>
+ 
+ <section id="calculator">
+     <div class="container">
+       <form name="form">
+           <input type="text" name="box" id="box" readonly>
+           
+           <button type="button" class="btn" onclick="clickc()">c</button>
+           <button type="button" class="btn" onclick="clickmd()">%</button>
+           <button type="button" class="btn" onclick="clickseven()">7</button>
+           <button type="button" class="btn" onclick="clickeight()">8</button>
+           <button type="button" class="btn" onclick="clicknine()">9</button>
+           <button type="button" class="btn" onclick="clickdivide()">/</button>
+           <button type="button" class="btn" onclick="clickfour()">4</button>
+           <button type="button" class="btn" onclick="clickfive()">5</button>
+           <button type="button" class="btn" onclick="clicksix()">6</button>
+           <button type="button" class="btn" onclick="clickmulti()">*</button>
+           <button type="button" class="btn" onclick="clickthree()">3</button>
+           <button type="button" class="btn" onclick="clicktwo()">2</button>
+           <button type="button" class="btn" onclick="clickone()">1</button>
+           <button type="button" class="btn" onclick="clickmin()">-</button>
+           <button type="button" class="btn" onclick="clickdot()">.</button>
+           <button type="button" class="btn" onclick="clickzero()">0</button>
+           <button type="button" class="btn" onclick="clickequl()">=</button>
+           <button type="button" class="btn" onclick="clickplus()">+</button>
+           
+           
+       </form> 
+     </div>
+ </section>
+ 
+ <section id="form-area">
+      <form class="signup-form" name="signup">
+      <input type="text" class="form-co" name="fname" placeholder="First Name">
+      <input type="email"  class="form-co"name="email" placeholder="Email Address">
+      <input type="text"  class="form-co"name="nm" placeholder="phone number">
+      <input type="password"  class="form-co "name="pw" id="passwordid" onkeyup="passwordkey()"  placeholder="password">
+      <span id="passwordtext"></span>
+      <input type="password" class="form-co" name="rpw" placeholder="retype-password">
+      
+      <button type="button" class="btn btn-lg btn-primary" onclick="clickme()">sign up</button>
+      
+      <h3 id="show"></h3>
+      
+  </form>
+ </section>
+ 
+ <section id="text-area">
+     <textarea id="textresult" cols="70" rows="10" onkeyup="textshow()"></textarea>
+     <h3 id="textresultshow">you can type 10 character </h3>
+ </section>
+  
+  
+   
+   <script>
+    
+       function getnamta(){
+           var number= document.getElementById("namta").value;
+           
+           var n = 10;
+           var result = "";
+           
+           for (var i = 1; i<=n; i++){
+               result = result + number + "*" + i + " = " + number * i + ("<br>");
+                 document.getElementById("resultshow").innerHTML=result;
+           }
+       }
+       
+       
+       
+      function clickc(){ document.getElementById("box").value = "";}
+      function clickmd(){ document.getElementById("box").value  += "%";}
+      function clickseven(){ document.getElementById("box").value += 7;}
+      function clickeight(){ document.getElementById("box").value += 8;}
+      function clicknine(){ document.getElementById("box").value += 9;}
+      function clickdivide(){ document.getElementById("box").value += "/";}
+      function clickdivide(){ document.getElementById("box").value += "/";}
+      function clickfour(){ document.getElementById("box").value += 4;}
+      function clickfive(){ document.getElementById("box").value += 5;}
+      function clicksix(){ document.getElementById("box").value += 6;}
+      function clickmulti(){ document.getElementById("box").value += "*";}
+      function clickthree(){ document.getElementById("box").value += 3;}
+      function clicktwo(){ document.getElementById("box").value += 2;}
+      function clickone(){ document.getElementById("box").value += 1;}
+      function clickmin(){ document.getElementById("box").value += "-";}
+      function clickdot(){ document.getElementById("box").value += ".";}
+      function clickdot(){ document.getElementById("box").value += ".";}
+      function clickzero(){ document.getElementById("box").value += 0;}
+      function clickequl(){
+          var e = eval(document.getElementById("box").value);
+          document.getElementById("box").value=e;
+      }
+      function clickplus(){ document.getElementById("box").value += "+";}
+       
+       
+       
+       function clickme(){
+           var fname = document.signup.fname.value;
+           var email = document.signup.email.value;
+           var ph = document.signup.nm.value;
+           var pw = document.signup.pw.value;
+           var rpw = document.signup.rpw.value;
+            
+           var visible = document.getElementById("show");
+          
+           if (fname == "" || email == "" || ph == "" || pw == "" || rpw == ""){
+                visible.innerHTML= "you can not empty any field"
+           }
+           else if(ph.length < 11){
+                visible.innerHTML= "enter perfect phone number"
+           }
+           else if(pw.length < 6){
+               visible.innerHTML= "enter minimum 6 digit number"
+             }
+              
+           else if(pw != rpw){
+               visible.innerHTML= "password not matched"
+           }else{
+                visible.innerHTML= "your data is send"
+           }
+       }
+       
+      function textshow(){
+           var running= document.getElementById("textresult").value;
+          document.getElementById("textresultshow").innerHTML= running;
+          
+          if (running.length <= 10){
+               document.getElementById("textresultshow").style.color = "green"
+          }else{
+               document.getElementById("textresultshow").style.color = "red"
+          }
+      }
+       
+       function passwordkey(){
+           var passwordup = document.getElementById("passwordid").value;
+           //document.getElementById("passwordtext").innerHTML = passwordup;
+           if (passwordup.length < 4){
+               document.getElementById("passwordtext").innerHTML = "weak";
+               document.getElementById("passwordtext").style.color = "red";
+           }else if(passwordup.length <= 6){
+                document.getElementById("passwordtext").innerHTML = "medium";
+               document.getElementById("passwordtext").style.color = "blue";
+           }else{
+               document.getElementById("passwordtext").innerHTML = "strong";
+               document.getElementById("passwordtext").style.color = "green";
+           }
+       }
+       
+    </script>
+  </body>
+
+</html>

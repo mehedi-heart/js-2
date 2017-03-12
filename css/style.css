@@ -1,0 +1,62 @@
+#namota {
+  text-align: center;
+}
+#namota #namta{
+margin-top: 10px;
+}
+.btn-success {
+    margin-top: 13px;
+}
+#calculator .container {
+    width: 450px;
+}
+
+#box {
+  width: 100%;
+  height: 37px;
+    background: #2F9F63;
+border: 1px solid transparent;
+color: #fff;
+    margin-bottom: 8px;
+}
+#calculator .btn {
+     padding: 4px 24px;
+   font-size: 17px;
+      background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    margin: 2px 0px;
+    background: #35B771;
+    color: #fff;
+width: 19.2%;
+    font-weight: bold;
+}
+form.signup-form {
+    margin: 30px auto;
+    width: 510px;
+}
+input.form-co {
+    width: 100%;
+    margin: 6px 0;
+    padding: 14px 10px;
+    font-size: 16px;
+    border: 1px solid rgba(102, 102, 102, 0.44);
+}
+#text-area{
+    margin: 0 auto;
+    width: 500px;
+    padding: 70px 0;
+}
+span#passwordtext {
+    position: absolute;
+    left: 73%;
+    bottom: 15%;
+    font-size: 16px;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    transform: translate(-73%,-15%);
+}
+input#passwordid {
+    position: relative;
+}
+
